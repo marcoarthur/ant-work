@@ -12,14 +12,13 @@ our $VERSION = '0.01';
 has work => (
     is        => 'ro',
     isa       => CodeRef,
-    predicate => 1,
     required  => 1,
 );
 
 has description => (
     is       => 'ro',
     isa      => Str,
-    required => 1,
+    predicate => 1,
 );
 
 async sub execute_p ( $self, $args, $timeout = TIMEOUT ) {
@@ -40,6 +39,7 @@ sub execute ( $self, $args, $timeout = TIMEOUT ) {
 }
 
 1;
+
 __END__
 
 =encoding utf-8
