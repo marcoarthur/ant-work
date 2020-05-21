@@ -13,7 +13,7 @@ __END__
 
 =head1 NAME
 
-Ant - Blah blah blah
+Ant - A single Ant
 
 =head1 SYNOPSIS
 
@@ -21,7 +21,8 @@ Ant - Blah blah blah
 
 =head1 DESCRIPTION
 
-Ant is
+Ant is capable of execute work. You can give it a function it will make it
+non block.
 
 =head1 AUTHOR
 
