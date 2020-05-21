@@ -21,8 +21,8 @@ Ant - A single Ant
 
 =head1 DESCRIPTION
 
-Ant is capable of execute work. You can give it a function it will make it
-non block.
+Ant is capable of execute async work. Give it a job (function) it will wrap a
+promise around and execute it.
 
 =head1 AUTHOR
 

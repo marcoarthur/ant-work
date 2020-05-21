@@ -22,15 +22,21 @@ has description => (
     required => 1,
 );
 
-
-async sub execute ( $self, $args ) {
+async sub execute_p ( $self, $args, $timeout = TIMEOUT ) {
     my $p = Mojo::Promise->new(
         sub ( $resolve, $reject ) {
             my $res = $self->work->($args);
             $res ? $resolve->($res) : $reject->($res);
         }
-    )->timeout(TIMEOUT);
+    )->timeout($timeout);
     return $p;
+}
+
+sub execute ( $self, $args, $timeout = TIMEOUT ) {
+    my $ret;
+    $self->execute_p( $args, $timeout )->then( sub { $ret = [@_] } )
+      ->catch( sub { warn "Err: " . shift } )->wait;
+    return $ret;
 }
 
 1;
