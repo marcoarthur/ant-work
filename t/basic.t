@@ -12,9 +12,11 @@ sub ant_test {
     isa_ok( my $p = $a->execute_p( [] ), "Mojo::Promise" );
     $p->then( sub { is( $_[0], $res, "Promised Code executed" ) } )
       ->catch( sub { like $_[0], qr/Error.*/, "Promised Code executed with error" } )->wait;
-    is_deeply my $v = $a->execute( [] ), [$res], "Block Code exec";
+    is_deeply [ @{ $a->execute( [] ) } ], [$res], "Block Code exec";
 }
 
 ant_test( sub { "no work" }, "no work", "my work description" );
+
+#TODO: find a way to trigger timeout
 
 done_testing;
