@@ -4,9 +4,10 @@ use Moo::Role;
 use Types::Standard -types;
 use 5.028;
 use Mojo::Promise;
-use feature qw(signatures);
-no warnings qw(experimental::signatures);
-use DDP;
+use Mojo::Base -async_await, -signatures;
+
+use constant TIMEOUT => 5;
+our $VERSION = '0.01';
 
 has work => (
     is        => 'ro',
@@ -21,10 +22,8 @@ has description => (
     required => 1,
 );
 
-use constant TIMEOUT => 5;
-our $VERSION = '0.01';
 
-sub execute ( $self, $args ) {
+async sub execute ( $self, $args ) {
     my $p = Mojo::Promise->new(
         sub ( $resolve, $reject ) {
             my $res = $self->work->($args);
