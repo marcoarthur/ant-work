@@ -1,10 +1,12 @@
 package Ant;
 
-use strict;
-use 5.008_005;
+use Moo;
+use 5.028;
+with qw(Ant::Interface);
 our $VERSION = '0.01';
 
 1;
+
 __END__
 
 =encoding utf-8
