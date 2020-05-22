@@ -28,7 +28,7 @@ async sub execute_p ( $self, $args, $timeout = TIMEOUT ) {
             my $res = $self->work->($args);
             $res ? $resolve->($res) : $reject->(Ant::Exception->throw($res));
         }
-    )->timeout($timeout => "timeout");
+    )->timeout($timeout => "work timeout");
     return $p;
 }
 
