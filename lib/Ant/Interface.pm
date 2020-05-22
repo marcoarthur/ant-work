@@ -5,6 +5,7 @@ use Types::Standard -types;
 use 5.028;
 use Mojo::Promise;
 use Mojo::Base -async_await, -signatures;
+use Ant::Exception;
 
 use constant TIMEOUT => 5;
 our $VERSION = '0.01';
@@ -25,16 +26,17 @@ async sub execute_p ( $self, $args, $timeout = TIMEOUT ) {
     my $p = Mojo::Promise->new(
         sub ( $resolve, $reject ) {
             my $res = $self->work->($args);
-            $res ? $resolve->($res) : $reject->($res);
+            $res ? $resolve->($res) : $reject->(Ant::Exception->throw($res));
         }
-    )->timeout($timeout);
+    )->timeout($timeout => "timeout");
     return $p;
 }
 
 sub execute ( $self, $args, $timeout = TIMEOUT ) {
     my $ret;
-    $self->execute_p( $args, $timeout )->then( sub { $ret = [@_] } )
-      ->catch( sub { warn "Err: " . shift } )->wait;
+    $self->execute_p( $args, $timeout )
+    ->then( sub { $ret = [@_] } )
+    ->catch( sub { warn "Err: " . shift } )->wait;
     return $ret;
 }
 
