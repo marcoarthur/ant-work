@@ -5,8 +5,10 @@ Ant - A single Ant
 # SYNOPSIS
 
     use Ant;
-    my $a = Ant->new( work => sub { "do work" }, description => "some work" );
-    say $a->execute; #do work
+    use feature qw(say);
+    my $a = Ant->new( work => sub { "worked on " . $_[0]->[0] }, description => "some work" );
+    my $res = $a->execute([$a->description]);
+    say $res->[0]; #worked on some work
 
 # DESCRIPTION
 
