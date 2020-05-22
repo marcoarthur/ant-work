@@ -5,6 +5,8 @@ Ant - A single Ant
 # SYNOPSIS
 
     use Ant;
+    my $a = Ant->new( work => sub { "do work" }, description => "some work" );
+    say $a->execute; #do work
 
 # DESCRIPTION
 
