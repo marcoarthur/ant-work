@@ -18,6 +18,8 @@ Ant - A single Ant
 =head1 SYNOPSIS
 
   use Ant;
+  my $a = Ant->new( work => sub { "do work" }, description => "some work" );
+  say $a->execute; #do work
 
 =head1 DESCRIPTION
 
