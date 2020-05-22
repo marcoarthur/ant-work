@@ -1,6 +1,6 @@
 # NAME
 
-Ant - Blah blah blah
+Ant - A single Ant
 
 # SYNOPSIS
 
@@ -8,7 +8,8 @@ Ant - Blah blah blah
 
 # DESCRIPTION
 
-Ant is
+Ant is capable of execute async work. Give it a job (function) it will wrap a
+promise around and execute it.
 
 # AUTHOR
 
