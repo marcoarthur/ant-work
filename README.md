@@ -6,7 +6,7 @@ Ant - A single Ant
 
     use Ant;
     use feature qw(say);
-    my $a = Ant->new( work => sub { "worked on " . $_[0]->[0] }, description => "some work" );
+    my $a = Ant->new( work => sub { "worked on " . shift->[0] }, description => "some work" );
     my $res = $a->execute([$a->description]);
     say $res->[0]; #worked on some work
 
