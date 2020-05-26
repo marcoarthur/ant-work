@@ -4,6 +4,7 @@ requires 'Moo';
 requires 'Moo::Role';
 requires 'Types::Standard';
 requires 'perl', '5.028';
+requires 'Future::AsyncAwait';
 
 on configure => sub {
     requires 'Module::Build::Tiny', '0.034';
