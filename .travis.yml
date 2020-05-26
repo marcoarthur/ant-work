@@ -1,0 +1,10 @@
+language: perl
+perl:
+    - "5.30"
+    - "5.28"
+before_install:
+    - git clone git://github.com/travis-perl/helpers ~/travis-perl-helpers
+    - source ~/travis-perl-helpers/init --auto
+    - cpanm --notest Devel::Cover::Report::Coveralls
+after_success:
+    - cover -test -report coveralls
