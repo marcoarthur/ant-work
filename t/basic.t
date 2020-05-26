@@ -1,5 +1,6 @@
 use strict;
 use Test::More;
+use Test::Warn;
 use Mojo::Promise;
 
 use_ok 'Ant';
@@ -17,7 +18,8 @@ sub ant_test {
 
     # new Ant with a 2 secs work
     $a = Ant->new( work => sub { Mojo::Promise->timer( 2 => "two secs" ) } );
-    my $ret = $a->execute( [], 0.025 );    # execute within 0.025 secs
+    my $ret;
+    warning_like { $ret = $a->execute( [], 0.025 ) } qr/^Err: /, "Warn timeout";   # execute within 0.025 secs
     is $ret->[0], undef, "Code timeout'ed"; # timeout
 }
 
