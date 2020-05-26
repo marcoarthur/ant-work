@@ -1,4 +1,4 @@
-package Ant::Interface;
+package Ant::Role;
 
 use Moo::Role;
 use Types::Standard -types;
@@ -48,15 +48,15 @@ __END__
 
 =head1 NAME
 
-Ant::Interface - Blah blah blah
+Ant::Role - Blah blah blah
 
 =head1 SYNOPSIS
 
-  use Ant::Interface;
+  use Ant::Role;
 
 =head1 DESCRIPTION
 
-Ant::Interface is
+Ant::Role is
 
 =head1 AUTHOR
 
