@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/marcoarthur/ant-work.svg?branch=master)](https://travis-ci.org/marcoarthur/ant-work)
+[![Coverage Status](https://coveralls.io/repos/marcoarthur/ant-work/badge.svg?branch=master)](https://coveralls.io/r/marcoarthur/ant-work?branch=master)
+[![Cpan license](https://img.shields.io/cpan/l/Ant.svg)](https://metacpan.org/release/Ant)
+
 # NAME
 
 Ant - A single Ant

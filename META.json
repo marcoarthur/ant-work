@@ -54,6 +54,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/marcoarthur/ant-work/issues"
+      },
+      "homepage" : "https://github.com/marcoarthur/ant-work",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/marcoarthur/ant-work.git",
+         "web" : "https://github.com/marcoarthur/ant-work"
+      }
+   },
    "version" : "0.01",
    "x_generated_by_perl" : "v5.28.2",
    "x_serialization_backend" : "Cpanel::JSON::XS version 4.19",
