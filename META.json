@@ -38,6 +38,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Future::AsyncAwait" : "0",
             "Mojo::Base" : "0",
             "Mojo::Promise" : "0",
             "Moo" : "0",
