@@ -3,7 +3,7 @@ package Ant;
 use Moo;
 use 5.028;
 with qw(Ant::Role);
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 1;
 

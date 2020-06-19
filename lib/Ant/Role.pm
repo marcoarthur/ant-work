@@ -8,7 +8,7 @@ use Mojo::Base -async_await, -signatures;
 use Ant::Exception;
 
 use constant TIMEOUT => 5;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 has work => (
     is        => 'ro',

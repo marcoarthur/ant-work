@@ -2,7 +2,7 @@ package Ant::Exception;
 
 use 5.028;
 use Mojo::Base 'Mojo::Exception';
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 1;
 __END__
